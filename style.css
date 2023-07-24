@@ -1,0 +1,18 @@
+.cells:hover {
+    background-color: black;
+}
+
+.cells {
+    background-color: bisque;
+    flex: 1 1 auto;
+    height: 100px;
+    width: 100px;
+   
+}
+
+#container {
+    width: 900px;
+    height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+}
