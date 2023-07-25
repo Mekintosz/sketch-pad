@@ -1,12 +1,16 @@
-.cells:hover {
+/*  .cells:hover {
     background-color: black;
-}
+}*/
 
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .cells {
     background-color: bisque;
-    flex: 1 1 auto;
-    height: 100px;
-    width: 100px;
+    flex: 1 0 auto;
+   
    
 }
 
@@ -15,4 +19,9 @@
     height: 900px;
     display: flex;
     flex-wrap: wrap;
+    flex: 0 0 initial;
+}
+
+.colored {
+    background-color: black;
 }
