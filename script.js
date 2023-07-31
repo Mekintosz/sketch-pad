@@ -14,7 +14,7 @@ function addDivs() {
       const padDiv = document.createElement("div")
       pad.appendChild(padDiv);
       padDiv.classList.add("cells");
-      padDiv.addEventListener("mouseenter", (e) =>  padDiv.setAttribute("style", "background: black;"));
+      padDiv.addEventListener("mouseenter", (e) =>  padDiv.classList.add("colored"));
     }
     
 
@@ -24,7 +24,6 @@ function addDivs() {
 
 function newGrid() {
   const pad = document.querySelector("#container");
-  const  padDiv = document.querySelectorAll(".cells");
   const container = document.querySelector('#container');
   removeAllDivs(container)
 
@@ -33,9 +32,9 @@ function newGrid() {
     for (let i=0; i < numOfDivs; i += 1) {
       const padDiv = document.createElement("div")
       padDiv.setAttribute("style", `width: ${900 / Math.sqrt(numOfDivs)}px`);
-      padDiv.classList.add("new-cells");
+      padDiv.classList.add("cells");
       pad.appendChild(padDiv);
-      padDiv.addEventListener("mouseenter", (e) => padDiv.classList.add("colored") );
+      padDiv.addEventListener("mouseenter", (e) =>  padDiv.classList.add("colored"));
     }
 }
 
@@ -45,6 +44,32 @@ function removeAllDivs(parent) {
   }
 }
 
+function giveRandomColor() {
+const padDiv = document.querySelectorAll(".cells")
+
+
+
+  // Generates a random value between 0 and 255
+  function randomNum() {
+    return Math.floor(Math.random() * 256);
+  }
+
+  // Returns an array of 3 values for rgb
+  function randomRGB() {
+    var red = randomNum();
+    var green = randomNum();
+    var blue = randomNum();
+    return [red,green,blue];
+  }
+
+  // Store an array of values for rgb
+  var rgbVals = randomRGB();
+
+  // Turn array into an rgb value
+  var tempColor = "rgb(" + rgbVals[0] + ", " + rgbVals[1] + ", " + rgbVals[2] + ")";
+
+  // Give rgb color to the background
+  padDiv.addEventListener("mouseenter", (e) => this.style.add("color",tempColor));
+}
 
 addDivs();
-
