@@ -8,9 +8,9 @@
 function addDivs() {
     const pad = document.querySelector("#container");
     
-      i = 0,
-      numOfDivs = 81;
-    for (i; i < numOfDivs; i += 1) {
+      
+      let numOfDivs = 81;
+    for (let i=0; i < numOfDivs; i += 1) {
       const padDiv = document.createElement("div")
       pad.appendChild(padDiv);
       padDiv.classList.add("cells");
@@ -28,12 +28,12 @@ function newGrid() {
   const container = document.querySelector('#container');
   removeAllDivs(container)
 
-      i = 0,
-      numOfDivs = prompt("Choos number of pixels up to 100");
-    for (i; i < numOfDivs; i += 1) {
+      let numOfDivs = prompt("Choose number of pixels per side up to 100") ** 2;
+   
+    for (let i=0; i < numOfDivs; i += 1) {
       const padDiv = document.createElement("div")
-      padDiv.setAttribute("style", `width: ${900/Math.sqrt(numOfDivs)}px`);
-      padDiv.classList.add("cells");
+      padDiv.setAttribute("style", `width: ${900 / Math.sqrt(numOfDivs)}px`);
+      padDiv.classList.add("new-cells");
       pad.appendChild(padDiv);
       padDiv.addEventListener("mouseenter", (e) => padDiv.classList.add("colored") );
     }

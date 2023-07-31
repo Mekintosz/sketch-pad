@@ -6,12 +6,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: gray;
+    padding: 40px;
 }
+.cells,
+.new-cells {
+    
+    flex: 1 1 auto;
+}
+
 .cells {
-    background-color: bisque;
-    flex: 1 0 auto;
-   
-   
+    width: 100px;
 }
 
 #container {
@@ -20,6 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     flex: 0 0 initial;
+    background-color: white;
 }
 
 .colored {
